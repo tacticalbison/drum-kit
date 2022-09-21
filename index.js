@@ -19,18 +19,27 @@ function handleClick() {
   switch (choice) {
     case "w":
       tom1.play();
+      break;
     case "a":
       tom4.play();
+      break;
     case "s":
       tom2.play();
+      break;
     case "d":
       tom3.play();
+      break;
     case "j":
       snare.play();
+      break;
     case "k":
       kick.play();
+      break;
     case "l":
       crash.play();
+      break;
+    default:
+      break;
   }
 
   setTimeout(() => {
