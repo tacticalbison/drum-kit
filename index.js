@@ -15,9 +15,24 @@ let tom4 = new Audio("../sounds/tom-4.mp3");
 function handleClick() {
   this.style.color = "white";
 
-  if (this.className.split(" ").includes("drum")) {
-    tom2.play();
+  let choice = this.innerHTML;
+  switch (choice) {
+    case "w":
+      tom1.play();
+    case "a":
+      tom4.play();
+    case "s":
+      tom2.play();
+    case "d":
+      tom3.play();
+    case "j":
+      snare.play();
+    case "k":
+      kick.play();
+    case "l":
+      crash.play();
   }
+
   setTimeout(() => {
     this.style.color = "";
   }, 1000);
