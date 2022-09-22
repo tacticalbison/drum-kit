@@ -19,7 +19,7 @@ let tom3 = new Audio("../sounds/tom-3.mp3");
 let tom4 = new Audio("../sounds/tom-4.mp3");
 
 function handleChoice(choice) {
-  // this.style.color = "white";
+  buttonAnimate(choice);
 
   switch (choice) {
     case "w":
@@ -46,8 +46,13 @@ function handleChoice(choice) {
     default:
       break;
   }
+}
 
-  // setTimeout(() => {
-  //   this.style.color = "";
-  // }, 1000);
+function buttonAnimate(key) {
+  let activeButton = document.querySelector(`.${key}`);
+  activeButton.classList.add("pressed");
+
+  setTimeout(() => {
+    activeButton.classList.remove("pressed");
+  }, 250);
 }
