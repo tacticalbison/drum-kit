@@ -1,7 +1,13 @@
-let buttons = document.querySelectorAll("button");
+const buttons = document.querySelectorAll("button");
 
 buttons.forEach((ele) => {
-  ele.addEventListener("click", handleClick);
+  ele.addEventListener("click", (evt) => {
+    handleChoice(evt.target.innerHTML);
+  });
+});
+
+addEventListener("keydown", (evt) => {
+  handleChoice(evt.key);
 });
 
 let crash = new Audio("../sounds/crash.mp3");
@@ -12,10 +18,9 @@ let tom2 = new Audio("../sounds/tom-2.mp3");
 let tom3 = new Audio("../sounds/tom-3.mp3");
 let tom4 = new Audio("../sounds/tom-4.mp3");
 
-function handleClick() {
-  this.style.color = "white";
+function handleChoice(choice) {
+  // this.style.color = "white";
 
-  let choice = this.innerHTML;
   switch (choice) {
     case "w":
       tom1.play();
@@ -42,7 +47,7 @@ function handleClick() {
       break;
   }
 
-  setTimeout(() => {
-    this.style.color = "";
-  }, 1000);
+  // setTimeout(() => {
+  //   this.style.color = "";
+  // }, 1000);
 }
